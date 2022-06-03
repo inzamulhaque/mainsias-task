@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
+    const navigate = useNavigate();
     return (
         <>
             <Col>
@@ -12,7 +14,7 @@ const Product = ({ product }) => {
                         <Card.Text>
                             ₹{product.price}
                         </Card.Text>
-                        <Button variant="primary">Buy Now</Button>
+                        <Button onClick={() => navigate(`/buyproduct/${product.id}`)} variant="primary">Buy Now</Button>
                     </Card.Body>
                 </Card>
             </Col>
